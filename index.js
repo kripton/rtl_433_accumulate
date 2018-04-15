@@ -32,12 +32,15 @@ rl.on('line', function(line){
 
     try {
       var obj = JSON.parse(line);
+      var sensorKey = obj.model.replace(/\s/g, '_');
+      if (obj.channel) {
+        sensorKey = sensorKey + '_channel_' + obj.channel;
+      }
+      if (obj.rc) {
+        sensorKey = sensorKey + '_rc_' + obj.rc;
+      }
       if (obj.id) {
-        var sensorKey = obj.model.replace(/\s/g, '_') + '_id_' + obj.id;
-      } else if (obj.rc) {
-        var sensorKey = obj.model.replace(/\s/g, '_') + '_rc_' + obj.rc;
-      } else {
-        var sensorKey = obj.model.replace(/\s/g, '_') + 'nonunique';
+        sensorKey = sensorKey + '_id_' + obj.id;
       }
       sensorStates[sensorKey] =  obj;
     } catch (exception) {
