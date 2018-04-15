@@ -1,0 +1,27 @@
+{
+  "name": "rtl_433_accumulate",
+  "version": "0.0.1",
+  "description": "Remembers the latest value per sensor and makes them available via HTTP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kripton/rtl_443_accumulate.git"
+  },
+  "keywords": [
+    "rtl",
+    "sdr",
+    "node"
+  ],
+  "author": "Jannis Achstetter <kripton@kripserver.net>",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/kripton/rtl_433_accumulate/issues"
+  },
+  "homepage": "https://github.com/kripton/rtl_433_accumulate#readme",
+  "dependencies": {
+    "express": "^4.0.0"
+  }
+}
